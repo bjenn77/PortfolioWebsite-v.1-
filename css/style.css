@@ -1,0 +1,261 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary:  'Cormorant SC', serif;
+    --ff-secondary: Georgia, serif;
+
+    --fw-reg:300;
+    --fw-bold:700;
+
+    --clr-light:#fff;
+    --clr-dark:#0D0D0C;
+    --clr-accent:#8D1919;
+
+    --fs-h1:3rem;
+    --fs-h2:2.25rem;
+    --fs-h3:1.25rem;
+    --fs-body:1rem;
+
+    --bs:.25em .25em .75em rgba(0,0,0,.25),
+         .125em .125em .50em rgba(0,0,0.15);
+
+}
+
+@media (min-width:800px) {
+    :root {
+        --fs-h1:4.5rem;
+        --fs-h2:3.75rem;
+        --fs-h3:1.5rem;
+        --fs-body:1.125rem;
+    }
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.4;
+}
+
+.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+      
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+      
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  
+  @media screen and (max-width: 1024px) { /* Specific to this particular image */
+    img.bg {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }
+  }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+section{
+    padding: 5em 2em;
+}
+
+strong { font-weight: var(--fw-bold);}
+
+:focus {
+    outline: 3px solid var(--clr-dark);
+    outline-offset: 3px;
+}
+
+.btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    text-decoration:#fff;
+    color: var(--clr-light);
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+h1,
+h2,
+h3 {
+    line-height:1.1;
+    margin: 0;
+}
+
+h1 {font-size: var(--fs-h1);}
+h2 {font-size: var(--fs-h2);}
+h3 {font-size: var(--fs-h3);}
+
+p {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+    
+}
+
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section--subtitle--about {
+    background: var(--clr-accent) ;
+    font-family: var(--ff-secondary);
+    font-size:1.35em ;
+    padding: .25em 1em;
+    color: #fff;
+    margin-bottom: 1em;
+}
+
+nav {
+    display: none;
+}
+
+/* Intro*/
+
+.intro {
+    position: relative;
+    color: var(--clr-light);
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+@media (min-width:600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 2em;
+        grid-template-areas: 
+        "img title"
+        "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index :2;
+    }
+
+    .section__subtitle--intro{
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -2em;
+        width: calc(100% + 2em);
+       
+    }
+}
+
+.Skills {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    background:#fff;
+    background-image: url(../img/Vintage_Paper.jpg);
+    background-size: cover;
+    max-width: 1800px;
+    box-shadow: var(--bs);
+    
+    color: var(--clr-dark);
+    text-align: center;
+}
+
+.section__title--skills {
+    font-family:var(--ff-secondary);
+    position: relative;
+}
+
+.section__title--skills::after{
+    content: '';
+    display: block;
+    width: 2em;
+    height: 3px;
+    margin: .5em auto 1em;
+    background: var(--clr-dark);
+    opacity: 1;
+}
+
+
+.skill__title {
+    font-weight: 900;
+    font-family: var(--ff-secondary);
+    font-size: 1.5em;
+}
+
+.skills {
+    margin-bottom: 4em;
+}
+
+.skill {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width:800px) {
+    .skills {
+        display: flex;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4em;
+    }
+
+    .skill + .skill {
+        margin-left: 2em;
+    }
+
+    .skill {
+        min-width: 250px;
+        margin: 0 auto;
+    }
+
+}
+
