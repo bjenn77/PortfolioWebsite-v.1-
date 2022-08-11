@@ -135,7 +135,7 @@ p {
 }
 
 .section__subtitle--intro,
-.section--subtitle--about {
+.section__subtitle--about {
     background: var(--clr-accent) ;
     font-family: var(--ff-secondary);
     font-size:1.35em ;
@@ -194,6 +194,7 @@ nav {
     }
 }
 
+/* SKill */
 .Skills {
     display:block;
     margin-left: auto;
@@ -201,7 +202,7 @@ nav {
     background:#fff;
     background-image: url(../img/Vintage_Paper.jpg);
     background-size: cover;
-    max-width: 1800px;
+    max-width: fit-content;
     box-shadow: var(--bs);
     
     color: var(--clr-dark);
@@ -239,10 +240,10 @@ nav {
     margin: 0 auto;
 }
 
-@media (min-width:800px) {
+@media (min-width:1200px) {
     .skills {
         display: flex;
-        max-width: 1100px;
+        max-width:fit-content;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 4em;
@@ -256,6 +257,93 @@ nav {
         min-width: 250px;
         margin: 0 auto;
     }
+}
 
+/*About me*/
+.about-me {
+    max-width: 1400px;
+    background-color: var(--clr-light);
+    margin: 0 auto;
+    margin-top: 10em;
+    box-shadow: var(--bs);
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+    @media (min-width: 600px) {
+        .about-me{
+            display:grid;
+            grid-template-columns: 1fr 200px;
+            grid-template-areas: 
+                "title img"
+                "subtitle img"
+                "text img";
+            grid-column-gap: 2em;
+        }
+
+        .section__title--about {
+            grid-area: title;
+        }
+
+        .section__subtitle--about {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            position: relative;
+            left: -1em;
+            width: calc(100% + 2em);
+            padding-left: 1em;
+            padding-right: calc(200px + 4em);
+            height: fit-content;
+
+        }
+
+        .about-me__body {
+            margin-top: 0 auto;
+        }
+
+        .about-me__img{
+            grid-area: img;
+            position: relative;
+            z-index: 2;
+            
+        }
+
+/* Legacy */
+.legacy {
+     background-color: var(--clr-accent);
+     color: var(--clr-light);
+     text-align: center;
+     margin: 10em;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio__item {
+    background-color: var(--clr-light);
+    overflow: hidden;
+}
+
+.portfolio__img {
+    transition: transform 750ms cubic-bezier(.5,0,.5,1), opacity 250ms linear;
+    ;
+}
+
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+ .portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: .75;
+}
 }
 
