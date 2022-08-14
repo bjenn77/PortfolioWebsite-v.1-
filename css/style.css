@@ -144,9 +144,8 @@ p {
     margin-bottom: 1em;
 }
 
-nav {
-    display: none;
-}
+/* Navigation */
+
 
 /* Intro*/
 
@@ -158,7 +157,7 @@ nav {
 .intro__img {
     box-shadow: var(--bs);
 }
-
+ 
 .section__subtitle--intro {
     display: inline-block;
 }
@@ -316,11 +315,13 @@ nav {
      color: var(--clr-light);
      text-align: center;
      margin: 10em;
+     box-shadow: var(--bs);
 }
 
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 20px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -328,6 +329,7 @@ nav {
 .portfolio__item {
     background-color: var(--clr-light);
     overflow: hidden;
+    box-shadow: var(--bs);
 }
 
 .portfolio__img {
@@ -346,4 +348,6 @@ nav {
     opacity: .75;
 }
 }
+
+
 
